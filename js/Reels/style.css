@@ -25,6 +25,7 @@ main {
     black
   );
   padding: 18px;
+  /* overflow: auto; */
 }
 section {
   height: 100%;
@@ -36,6 +37,12 @@ section {
 .all-reels {
   height: 100%;
   width: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.all-reels::-webkit-scrollbar {
+  display: none;
 }
 .reel {
   height: 100%;
@@ -44,6 +51,9 @@ section {
   background-color: seagreen;
   overflow: hidden;
   border-radius: 10px;
+  margin-bottom: 20px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .reel img {
   height: 100%;
@@ -53,7 +63,7 @@ section {
 }
 .reel .bottom {
   padding: 30px 20px;
-  background-color: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.046), rgba(0, 0, 0, 0.105));
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -62,10 +72,58 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-bottom: 18px;
 }
 .bottom .user img {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   object-fit: cover;
   border-radius: 50%;
+}
+.bottom .user h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.bottom .user button {
+  background-color: transparent;
+  padding: 2px 4px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.bottom > h3 {
+  font-weight: 700;
+  font-size: 19px;
+  overflow-wrap: anywhere; /* Full line cover hone ke baad hi word ko break karega */
+  word-break: break-word;
+}
+.right {
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  bottom: 12%;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+  /* background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.112)); */
+}
+.right i {
+  font-size: 20px;
+}
+.right h4 {
+  cursor: pointer;
+}
+.right h6 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.right > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
