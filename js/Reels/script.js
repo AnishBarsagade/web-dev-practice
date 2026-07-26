@@ -1,16 +1,18 @@
 const reels = [
   {
+    isMuted: 'true',
     username: 'alex_dev',
     likeCount: 12540,
     isLiked: false,
     commentCount: 342,
     caption: 'Late-night coding sessions hit different 🚀💻',
-    video: './videos/one.mp4',
+    video: './videos/ten.mp4',
     userProfile: 'https://randomuser.me/api/portraits/men/11.jpg',
     shareCount: 154,
     isFollowed: true,
   },
   {
+    isMuted: 'true',
     username: 'travelwithmia',
     likeCount: 28490,
     isLiked: true,
@@ -22,6 +24,7 @@ const reels = [
     isFollowed: false,
   },
   {
+    isMuted: 'true',
     username: 'fitness_ryan',
     likeCount: 18976,
     isLiked: false,
@@ -33,6 +36,7 @@ const reels = [
     isFollowed: true,
   },
   {
+    isMuted: 'true',
     username: 'foodie_sara',
     likeCount: 42310,
     isLiked: true,
@@ -44,6 +48,7 @@ const reels = [
     isFollowed: false,
   },
   {
+    isMuted: 'true',
     username: 'tech_josh',
     likeCount: 15670,
     isLiked: false,
@@ -55,6 +60,7 @@ const reels = [
     isFollowed: true,
   },
   {
+    isMuted: 'true',
     username: 'nature_clicks',
     likeCount: 31780,
     isLiked: true,
@@ -66,6 +72,7 @@ const reels = [
     isFollowed: true,
   },
   {
+    isMuted: 'true',
     username: 'gaming_zone',
     likeCount: 53420,
     isLiked: false,
@@ -77,6 +84,7 @@ const reels = [
     isFollowed: false,
   },
   {
+    isMuted: 'true',
     username: 'daily_quotes',
     likeCount: 10450,
     isLiked: true,
@@ -88,6 +96,7 @@ const reels = [
     isFollowed: true,
   },
   {
+    isMuted: 'true',
     username: 'street_photography',
     likeCount: 26790,
     isLiked: false,
@@ -99,6 +108,7 @@ const reels = [
     isFollowed: false,
   },
   {
+    isMuted: 'true',
     username: 'music_vibes',
     likeCount: 39120,
     isLiked: true,
@@ -111,20 +121,27 @@ const reels = [
   },
 ];
 
-var clutter = '';
-reels.forEach(function (elem) {
-  clutter += `<div class="reel">
-          <video autoplay loop muted src="${elem.video}"></video>
+var allReels = document.querySelector('.all-reels');
+var isMuted = true;
+function addReels() {
+  var clutter = '';
+  reels.forEach(function (elem, idx) {
+    clutter += `<div class="reel">
+          <video autoplay loop ${elem.isMuted ? 'muted' : ''} src="${elem.video}"></video>
+           <div class="mute" id=${idx}>
+           ${elem.isMuted ? ' <i class="ri-volume-mute-fill"></i>' : '<i class="ri-volume-up-line"></i>'}
+    
+    </div>
           <div class="bottom">
             <div class="user">
               <img src="${elem.userProfile}" alt="">
               <h4>${elem.username}</h4>
-              <button>${elem.isFollowed ? 'Unfollow' : 'Follow'}</button>
+              <button id=${idx} class='follow'>${elem.isFollowed ? 'Unfollow' : 'Follow'}</button>
             </div>
             <h3>${elem.caption}</h3>
           </div>
           <div class="right">
-            <div class="like icon">
+            <div id=${idx} class="like icon">
               <h4 class="like-icon">${elem.isLiked ? '<i class="love ri-heart-3-fill"></i>' : '<i class="ri-heart-3-line"></i>'}</h4>
               <h6>${elem.likeCount}</h6>
             </div>
@@ -141,7 +158,43 @@ reels.forEach(function (elem) {
             </div>
           </div>
         </div>`;
-});
+  });
 
-let allReels = document.querySelector('.all-reels');
-allReels.innerHTML = clutter;
+  allReels.innerHTML = clutter;
+}
+
+addReels();
+
+allReels.addEventListener('click', function (dets) {
+  let gold = dets.target.id;
+  if (dets.target.classList.contains('like')) {
+    if (!reels[gold].isLiked) {
+      console.log('hello');
+
+      reels[gold].likeCount++;
+      reels[gold].isLiked = true;
+    } else {
+      console.log('NO');
+
+      reels[gold].likeCount--;
+      reels[gold].isLiked = false;
+    }
+    addReels();
+  }
+  if (dets.target.className == 'follow') {
+    if (!reels[gold].isFollowed) {
+      reels[gold].isFollowed = true;
+    } else {
+      reels[gold].isFollowed = false;
+    }
+    addReels();
+  }
+  if (dets.target.className == 'mute') {
+    if (!reels[gold].isMuted) {
+      reels[gold].isMuted = true;
+    } else {
+      reels[gold].isMuted = false;
+    }
+    addReels();
+  }
+});

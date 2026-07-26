@@ -48,7 +48,7 @@ section {
   height: 100%;
   width: 100%;
   position: relative;
-  background-color: seagreen;
+  /* background-color: seagreen; */
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -63,7 +63,7 @@ section {
 }
 .reel .bottom {
   padding: 30px 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.046), rgba(0, 0, 0, 0.105));
+  background: linear-gradient(rgba(0, 0, 0, 0.023), rgba(0, 0, 0, 0.105));
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -102,6 +102,7 @@ section {
 .right {
   width: 47px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: absolute;
   right: 0;
@@ -126,7 +127,35 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 50px;
+  cursor: pointer;
 }
 .love {
   color: red;
+}
+.right > div h4 {
+  pointer-events: none;
+}
+.right > div h6 {
+  pointer-events: none;
+}
+.mute {
+  background-color: #333;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.mute i {
+  font-size: 20px;
+  pointer-events: none;
+}
+.mute:active {
+  scale: 0.95;
 }
