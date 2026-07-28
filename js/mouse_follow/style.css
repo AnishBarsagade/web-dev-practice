@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Now Display';
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  anchor-name: --some-anchor;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+}
+.box:hover {
+  anchor-name: --some-anchor;
+}
+.red {
+  background-color: rgb(158, 35, 35);
+}
+.blue {
+  background-color: rgb(33, 33, 176);
+}
+.green {
+  background-color: rgb(20, 130, 20);
+}
+.anchor {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: anchor(top);
+  left: anchor(left);
+  bottom: anchor(bottom);
+  right: anchor(right);
+  pointer-events: none;
+  position-anchor: --some-anchor;
+  transition: all linear 0.3s;
+  mix-blend-mode: difference;
+}
