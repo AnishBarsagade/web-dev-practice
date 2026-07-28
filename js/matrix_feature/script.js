@@ -1,14 +1,34 @@
 const para = document.querySelector('p');
 const characters = 'ABCEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-const text = para.innerText;
+const ogtext = para.innerText;
+
+let interval = null;
 para.addEventListener('mouseenter', function () {
-  setInterval(() => {
-    const str = text
+  let iteration = 0;
+  //purane interval ko clear karo
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    const str = ogtext
       .split('')
       .map((char, index) => {
-        return characters.split('')[Math.floor(Math.random() * 53)];
+        //for spaces do nothing to avoid jumping
+        if (char === '') return '';
+        //when iteration will become greater than the idx get the original character
+        if (index < iteration) {
+          return ogtext[index];
+        }
+        //dynamic length use karo
+        const randomIdx = Math.floor(Math.random() * characters.length);
+        return characters[randomIdx];
       })
       .join('');
     para.innerText = str;
+    // 5. Jab poora text reveal ho jaye to loop stop karo
+    if (iteration >= ogtext.length) {
+      clearInterval(interval);
+    }
+
+    iteration += 0.3;
   }, 30);
 });
