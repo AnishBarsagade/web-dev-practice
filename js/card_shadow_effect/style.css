@@ -43,10 +43,23 @@ body {
     linear-gradient(black) padding-box,
     conic-gradient(from var(--rotate), black, rgb(255, 0, 123), black)
       border-box;
-  border: 5px solid rgba(255, 255, 255, 0);
-  animation: borderAnimate 8s;
+  border: 0px solid rgba(255, 255, 255, 0);
+  animation: borderAnimate 5s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
   text-align: center;
+  transition: all 0.3s linear;
+  box-shadow: 0 0 0px rgb(255, 0, 123);
+  text-shadow: 0 0 0px rgb(255, 0, 123);
+  color: white;
+}
+.box:hover {
+  animation-play-state: running;
+  border: 5px solid rgba(255, 255, 255, 0);
+  text-shadow: 0 0 10px rgb(255, 0, 123);
+  box-shadow: 0 0 30px rgb(255, 0, 195);
+  color: rgb(255, 0, 123);
 }
 .box img {
   width: 100%;
