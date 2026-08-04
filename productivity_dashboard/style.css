@@ -111,9 +111,6 @@ section.all-elems {
 .back:active {
   scale: 0.97;
 }
-.todo-list-fullpage {
-  display: block;
-}
 .todo-list-fullpage h2 {
   font-size: 40px;
 }
@@ -197,6 +194,23 @@ section.all-elems {
   padding: 17px 30px;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.task h5 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.task h5 span {
+  background-color: red;
+  padding: 4px 5px;
+  font-size: 10px;
+  border-radius: 50px;
+}
+.task h5 span.true {
+  opacity: 1;
+}
+.task h5 span.false {
+  opacity: 0;
 }
 .task button {
   padding: 10px 25px;
