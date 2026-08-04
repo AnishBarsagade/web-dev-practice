@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Productivity Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,22 +35,51 @@
       </div>
     </section>
 
-    <section class="full-elem">
-      <h1>To Do page</h1>
+    <section class="full-elem todo-list-fullpage">
+      <button class="back" id="0">Close</button>
+      <h2>Your Personalized Task List</h2>
+      <div class="todo-container">
+        <div class="addTask">
+          <form action="">
+            <input type="text" placeholder="Enter Task">
+            <textarea placeholder="Enter details" rows="10" cols="5"></textarea>
+            <div class="mark-imp">
+              <input type="checkbox" id="check">
+              <label for="check">Mark as important!</label>
+            </div>
+            <button>Add Task</button>
+          </form>
+        </div>
+        <div class="allTask">
+          <div class="task">
+            <h5>Gym jao.</h5>
+            <button>Mark as completed</button>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <section class="full-elem">
+    <section class="full-elem daily-planner-fullpage">
+      <button class="back" id="1">Close</button>
       <h1>Daily Planner</h1>
     </section>
-    <section class="full-elem">
+
+    <section class="full-elem motivation-fullpage">
+      <button class="back" id="2">Close</button>
       <h1>Motivation</h1>
     </section>
-    <section class="full-elem">
+
+    <section class="full-elem pomodoro-fullpage">
+      <button class="back" id="3">Close</button>
       <h1>Pomodoro Timer</h1>
     </section>
-    <section class="full-elem">
+
+    <section class="full-elem daily-goals-fullpage ">
+      <button class="back" id="4">Close</button>
       <h1>Daily Goals</h1>
     </section>
+
   </div>
   <script src="script.js"></script>
 </body>
