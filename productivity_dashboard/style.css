@@ -237,3 +237,26 @@ section.all-elems {
 .mark-imp input {
   width: 30px !important;
 }
+.task .details-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 70%;
+  width: 100px;
+}
+.task details {
+  display: block;
+  font-size: 15px;
+  margin-top: 8px;
+  cursor: pointer;
+
+  text-align: left;
+}
+.task details p {
+  padding-top: 10px;
+  border-top: 1px solid #2d3748;
+  color: #cbd5e0;
+  font-size: 0.9rem;
+  word-break: break-word;
+}

@@ -23,8 +23,6 @@ function todoList() {
     console.log('Task List is empty.');
   }
   function renderTask() {
-    localStorage.setItem('currentTask', JSON.stringify(currentTask));
-
     let allTask = document.querySelector('.allTask');
     let sum = '';
     currentTask.forEach(function (elem, idx) {
@@ -32,10 +30,24 @@ function todoList() {
         sum +
         `<div class="task">
             <h5>${elem.task} <span class=${elem.imp}>Imp</span></h5>
+            <div class="details-section">
+            <details>
+            ${elem.details ? `<p class="task-details">${elem.details}</p>` : ''}
+             </details>
+             </div>
             <button id=${idx}>Mark as completed</button>
           </div>`;
     });
     allTask.innerHTML = sum;
+
+    localStorage.setItem('currentTask', JSON.stringify(currentTask));
+
+    document.querySelectorAll('.task button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        currentTask.splice(btn.id, 1);
+        renderTask();
+      });
+    });
   }
   renderTask();
 
@@ -46,6 +58,8 @@ function todoList() {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    // If value empty so return
+    if (taskInput.value.trim() === '') return;
     currentTask.push({
       task: taskInput.value,
       details: taskDetailsInput.value,
@@ -56,17 +70,6 @@ function todoList() {
     taskDetailsInput.value = '';
     taskCheckBox.checked = false;
     renderTask();
-    location.reload();
-  });
-
-  let markCompletedBtn = document.querySelectorAll('.task button');
-
-  markCompletedBtn.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      currentTask.splice(btn.id, 1);
-      renderTask();
-      location.reload();
-    });
   });
 }
 todoList();
