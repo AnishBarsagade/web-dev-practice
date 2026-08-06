@@ -122,6 +122,7 @@ section.all-elems {
   align-items: center;
   justify-content: space-between;
 }
+/* This is the left side of the todo-list page */
 .addTask {
   width: 33%;
   height: 100%;
@@ -259,4 +260,130 @@ section.all-elems {
   color: #cbd5e0;
   font-size: 0.9rem;
   word-break: break-word;
+}
+/* From here the daily planner section starts */
+/* .daily-planner-fullpage {
+  display: block;
+} */
+
+.daily-planner-fullpage h2 {
+  font-size: 40px;
+}
+.daily-planner-fullpage .day-planner {
+  background-color: var(--sec);
+  height: 85%;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+}
+.day-planner .day-planner-time {
+  background-color: var(--pri);
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: var(--tri1);
+}
+.day-planner .day-planner-time p {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-size: 12px;
+}
+.day-planner .day-planner-time input {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: var(--pri);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: var(--tri2);
+  font-size: 22px;
+  padding-top: 32px;
+}
+/* Starting the motivational section */
+.motivation-fullpage-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivation-fullpage .motivation-container {
+  width: 50%;
+  background-color: var(--sec);
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  border-radius: 50px;
+  isolation: isolate;
+}
+.motivation-fullpage .motivation-container::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: var(--tri1);
+  border-radius: 50px;
+  scale: 1.15;
+  filter: blur(80px);
+  z-index: -1;
+}
+.motivation-fullpage .motivation-container .motivation-wrapper {
+  z-index: 10;
+  position: relative;
+  /* height: 100%; */
+  width: 100%;
+  background-color: var(--sec);
+  border-radius: 40px;
+  padding: 15px;
+  transition: all ease-in 0.2s;
+}
+.motivation-wrapper:hover {
+  border: 1px solid white;
+}
+.motivation-wrapper img {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  opacity: 0.4;
+  height: 40px;
+}
+.motivation-1 {
+  background-color: var(--pri);
+  padding: 15px;
+  border-radius: 20px;
+}
+.motivation-1 h2 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.motivation-2 {
+  padding: 10px;
+  margin-top: 7px;
+}
+.motivation-2 h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.motivation-3 {
+  /* background-color: var(--pri); */
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.motivation-3 h2 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: right;
 }
