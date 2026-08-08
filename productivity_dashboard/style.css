@@ -1,8 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.5.15,
+* Autoprefixer: v10.5.0
+* Browsers: last 4 version
+*/
+
 :root {
   --pri: #222831;
   --sec: #393e46;
   --tri1: #00adb5;
   --tri2: #eeeeee;
+  --header-bg-img: url('https://images.unsplash.com/photo-1536183922588-166604504d5e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
 
 @font-face {
@@ -23,6 +31,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: aeonik;
 }
@@ -33,46 +42,105 @@ body {
   height: 100%;
   background-color: var(--pri);
   color: var(--tri2);
+  /* overflow: hidden; */
 }
 h1 {
   font-family: aeonik;
   font-weight: 200;
   color: var(--tri);
 }
-nav {
-  position: fixed;
+#main {
+  min-height: 100%;
   width: 100%;
-  height: 50px;
-  background-color: var(--sec);
 }
 section.all-elems {
   height: 100%;
   width: 100%;
-  padding: 40px;
-  padding-top: 70px;
+  padding: 30px;
+  position: absolute;
+}
+.all-elems .all-features {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 20px;
-  position: absolute;
+}
+.all-features header {
+  height: 210px;
+  width: 100%;
+  /* background-image: url('https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+  background-image: var(--header-bg-img);
+  background-image: contain;
+  background-size: cover;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+}
+header .header-1 h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+header .header-1 h4 {
+  font-size: 50px;
+  font-weight: 500;
+}
+header .header-1 h2 {
+  font-size: 35px;
+  font-weight: 500;
+}
+header .header-2 h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.header-2 #weather-desc {
+  font-size: 30px;
+  margin-top: -10px;
+  margin-bottom: 7px;
+  text-transform: capitalize;
+}
+header .header-2 h3 {
+  font-size: 17px;
+  font-weight: 500;
 }
 .elem {
   background-color: var(--sec);
   border-radius: 10px;
-  height: 300px;
+  color: white;
+  height: 250px;
   width: 220px;
   font-size: 20px;
   overflow: hidden;
   position: relative;
+  -webkit-transform: all ease 0.2s;
+  -ms-transform: all ease 0.2s;
   transform: all ease 0.2s;
   cursor: pointer;
+  font-weight: 700;
 }
 .elem:hover {
+  -webkit-box-shadow: 2px 3px 5px var(--tri1);
   box-shadow: 2px 3px 5px var(--tri1);
 }
 .elem img {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .elem h2 {
@@ -118,8 +186,14 @@ section.all-elems {
   height: 80%;
   width: 100%;
   margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 /* This is the left side of the todo-list page */
@@ -131,8 +205,15 @@ section.all-elems {
 }
 
 .addTask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 20px;
   gap: 10px;
@@ -169,6 +250,7 @@ section.all-elems {
   color: var(--tri2);
   margin-top: 10px;
   font-weight: 700;
+  -webkit-transition: all ease-in 0.2s;
   transition: all ease-in 0.2s;
 }
 .addTask button:active {
@@ -180,15 +262,28 @@ section.all-elems {
   height: 100%;
   background-color: var(--sec);
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 20px;
   overflow: auto;
 }
 .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
   background-color: var(--pri);
@@ -197,7 +292,11 @@ section.all-elems {
   margin-bottom: 10px;
 }
 .task h5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 12px;
 }
@@ -227,8 +326,14 @@ section.all-elems {
   scale: 0.96;
 }
 .mark-imp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 8px 0;
   font-size: 15px;
@@ -239,8 +344,14 @@ section.all-elems {
   width: 30px !important;
 }
 .task .details-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   position: absolute;
   left: 70%;
@@ -276,15 +387,26 @@ section.all-elems {
   margin-top: 30px;
   border-radius: 10px;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   overflow: auto;
 }
 .day-planner .day-planner-time {
   background-color: var(--pri);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   width: 49%;
@@ -313,8 +435,14 @@ section.all-elems {
 .motivation-fullpage-container {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -336,6 +464,7 @@ section.all-elems {
   background-color: var(--tri1);
   border-radius: 50px;
   scale: 1.15;
+  -webkit-filter: blur(80px);
   filter: blur(80px);
   z-index: -1;
 }
@@ -347,11 +476,12 @@ section.all-elems {
   background-color: var(--sec);
   border-radius: 40px;
   padding: 15px;
+  -webkit-transition: all ease-in 0.2s;
   transition: all ease-in 0.2s;
 }
-.motivation-wrapper:hover {
+/* .motivation-wrapper:hover {
   border: 1px solid white;
-}
+} */
 .motivation-wrapper img {
   position: absolute;
   right: 10%;
@@ -386,4 +516,245 @@ section.all-elems {
   font-size: 20px;
   font-weight: 500;
   text-align: right;
+}
+
+.pomodoro-fullpage {
+  margin-top: 30px;
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.45)),
+      to(rgba(0, 0, 0, 0.45))
+    ),
+    url(./bg-fantasy.webp);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(./bg-fantasy.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.pomodoro-fullpage h2 {
+  font-size: 40px;
+  color: white;
+}
+.pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.pomo-timer h1 {
+  font-size: 110px;
+  font-weight: 700;
+  color: White;
+}
+.pomo-timer button {
+  background-color: var(--tri1);
+  color: var(--tri2);
+  padding: 8px 15px;
+  margin: 7px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  -webkit-box-shadow: 3px 3px 0px black;
+  box-shadow: 3px 3px 0px black;
+  -webkit-transition: all ease-in 0.2s;
+  transition: all ease-in 0.2s;
+}
+.pomo-timer button:active {
+  scale: 0.97;
+  -webkit-box-shadow: 0px 0px 0px black;
+  box-shadow: 0px 0px 0px black;
+}
+.session {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-color: var(--tri1);
+  padding: 8px 16px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+/* Starting the daily goals section */
+
+.daily-goals-fullpage h1 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+.board {
+  height: 75%;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: var(--sec);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  gap: 10px;
+}
+.board h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.column {
+  -webkit-box-shadow: 4px 6px 10px black;
+  box-shadow: 4px 6px 10px black;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
+.task-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--pri);
+  padding: 12px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.task-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 10px;
+}
+.task-card span {
+  font-size: 20px;
+}
+.delete-btn {
+  background-color: #ff4c4c; /* Red background */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+.delete-btn:active {
+  scale: 0.95;
+}
+.add-task-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 18px;
+  padding: 15px;
+}
+.card-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#new-task-input {
+  -webkit-box-flex: 0.5;
+  -ms-flex-positive: 0.5;
+  flex-grow: 0.5;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: var(--sec);
+  outline: none;
+  border: none;
+  color: var(--tri2);
+  font-size: 18px;
+}
+#new-task-input:focus {
+  border: 1px solid var(--tri1);
+}
+#add-btn {
+  padding: 12px 15px;
+  background-color: var(--tri1);
+  border: none;
+  color: var(--tri2);
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+#add-btn:active {
+  scale: 0.96;
+}
+.missed-btn {
+  background-color: #f6ad55; /* Orange color taaki Delete (Red) se alag dikhe */
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 5px; /* Delete button aur iske beech thodi jagah */
+}
+
+.missed-btn:hover {
+  background-color: #dd6b20; /* Hover karne par dark orange */
+}
+/* For the theme section */
+
+nav {
+  padding: 20px 30px;
+  width: 100%;
+  margin-bottom: -23px;
+  /* background-color: red; */
+}
+nav .nav-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--sec);
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.theme {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: var(--tri1);
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+.theme:active {
+  scale: 0.95;
+}
+.theme i {
+  color: var(--tri2);
+  font-weight: 700;
 }
