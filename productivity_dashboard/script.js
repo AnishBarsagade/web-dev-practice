@@ -357,29 +357,32 @@ function weatherFunctionality() {
 }
 weatherFunctionality();
 
-let theme = document.querySelector('.theme i');
+function theme() {
+  let theme = document.querySelector('.theme i');
 
-let rootEl = document.documentElement;
-let backImg = document.querySelector('.all-features header ');
+  let rootEl = document.documentElement;
+  let backImg = document.querySelector('.all-features header ');
 
-let flag = 0;
-theme.addEventListener('click', function () {
-  if (flag == 0) {
-    rootEl.style.setProperty('--pri', '#222831');
-    rootEl.style.setProperty('--sec', '#393e46');
-    rootEl.style.setProperty('--tri1', '#00adb5');
-    rootEl.style.setProperty('--tri2', '#eeeeee');
-    rootEl.style.setProperty(
-      '--header-bg-img',
-      'url(https://images.unsplash.com/photo-1536183922588-166604504d5e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-    );
-    flag = 1;
-  } else if (flag == 1) {
-    rootEl.style.setProperty('--pri', '#FFDF82');
-    rootEl.style.setProperty('--sec', '#99C2FF');
-    rootEl.style.setProperty('--tri1', '#FF84BA');
-    rootEl.style.setProperty('--tri2', '#222831');
-    rootEl.style.setProperty('--header-bg-img', 'url(./weather.jpg)');
-    flag = 0;
-  }
-});
+  let flag = 0;
+  theme.addEventListener('click', function () {
+    if (flag == 0) {
+      rootEl.style.setProperty('--pri', '#222831');
+      rootEl.style.setProperty('--sec', '#393e46');
+      rootEl.style.setProperty('--tri1', '#00adb5');
+      rootEl.style.setProperty('--tri2', '#eeeeee');
+      rootEl.style.setProperty(
+        '--header-bg-img',
+        'url(https://images.unsplash.com/photo-1536183922588-166604504d5e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+      );
+      flag = 1;
+    } else if (flag == 1) {
+      rootEl.style.setProperty('--pri', '#FFDF82');
+      rootEl.style.setProperty('--sec', '#99C2FF');
+      rootEl.style.setProperty('--tri1', '#FF84BA');
+      rootEl.style.setProperty('--tri2', '#222831');
+      rootEl.style.setProperty('--header-bg-img', 'url(./weather.jpg)');
+      flag = 0;
+    }
+  });
+}
+theme();
