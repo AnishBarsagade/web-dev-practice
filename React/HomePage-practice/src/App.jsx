@@ -3,11 +3,16 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import HeroSection from './components/HeroSection/HeroSection';
 import AboutSection from './components/AboutSection/AboutSection';
+import ServicesSection from './components/ServicesSection/ServicesSection';
 const App = () => {
   return (
     <div className="container">
       <Navbar />
-      <HeroSection />
+      <div className="main">
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+      </div>
     </div>
   );
 };

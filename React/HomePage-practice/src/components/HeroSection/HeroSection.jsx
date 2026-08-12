@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import './HeroSection.css';
-import AboutSection from '../AboutSection/AboutSection';
+
 
 const HeroSection = () => {
   return (
@@ -45,7 +45,7 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-      <AboutSection />
+      
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutSection.css';
-import Card from './FeatureCard';
+import Image from '../../assets/badminton-court.png';
+import Image1 from '../../assets/new.png';
 const AboutSection = () => {
   return (
     <>
@@ -13,25 +14,79 @@ const AboutSection = () => {
             seasoned pros.
           </h4>
         </div>
-        <div className="cards-section">
-          {/* Card 1: Dark Card (Toggle switch inside) */}
-          <Card
-            title="Professional hard courts"
-            description="with tournament-grade lighting & climate control — play in perfect conditions, in any season."
-            bgClass="card-dark"
-          >
-            <div className="toggle-switch">
-              {/* Game mode toggle elements */}
+      </div>
+      <div className="cards-section">
+        <div class="card card-1">
+          <img src={Image1} alt="" />
+          <p>
+            <span>Professional hard courts</span> with tournament-grade
+            lightning & climate-control - play in{' '}
+            <span>prefect conditions,in any season.</span>
+          </p>
+          <div className="game-mode">
+            <i class="ri-toggle-fill"></i>
+            <p>Game mode</p>
+          </div>
+        </div>
+        <div class="card card-2">
+          <button>Private & Group Lessons</button>
+        </div>
+        <div class="card card-3">
+          <h5>100+</h5>
+          <h6>Pro Coaches</h6>
+          <p>
+            Cerified professionals ready to boost your game from first serve to
+            tournament level.
+          </p>
+          <div className="skill-container">
+            <div className="skill-row">
+              <span class="skill-label">Beginner</span>
+              <div className="dots-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <span class="skill-value">55</span>
             </div>
-          </Card>
-
-          {/* Card 2: Image Card */}
-          <Card title="Private & Group Lessons" bgClass="card-image" />
-
-          {/* Card 3: Stats Card (Progress dots inside) */}
-          <Card title="100+ Pro Coaches" bgClass="card-light">
-            {/* Progress dots wala content */}
-          </Card>
+            <div className="skill-row">
+              <span class="skill-label">Intermediate</span>
+              <div className="dots-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <span class="skill-value">40</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bottom-final">
+        <h3>A few more facts about us in numbers</h3>
+        <div className="numbers-container">
+          <div className="bottom-card">
+            <h2>12 000+</h2>
+            <p>Hours of play annually</p>
+          </div>
+          <div className="bottom-card">
+            <h2>89%</h2>
+            <p>Player retention Rate</p>
+          </div>
+          <div className="bottom-card">
+            <h2>1,200+</h2>
+            <p>Active Members</p>
+          </div>
+          <div className="bottom-card">
+            <h2>125+</h2>
+            <p>Annual Tournaments</p>
+          </div>
         </div>
       </div>
     </>

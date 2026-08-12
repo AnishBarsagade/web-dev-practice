@@ -1,0 +1,103 @@
+.cards-section-final {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 2px 23px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.cards-section-final .card {
+  padding: 20px;
+  border-radius: 20px;
+}
+.card-one {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.card-one .services {
+  padding: 4px 9px;
+  border-radius: 20px;
+  border: none;
+  background-color: #cec5c542;
+}
+.card-one h3 {
+  font-size: 22px;
+}
+.card-one .explore-more {
+  background-color: black;
+  color: white;
+  padding: 7px 15px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+}
+.card-two {
+  background-image: url('https://images.unsplash.com/photo-1516742720271-6ae39cbc5bd1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.glass {
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.148);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.card-two .end p {
+  color: White;
+  max-width: 60%;
+}
+.card-two .end {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-two .end i {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+.card-three {
+  padding: 0 !important;
+}
+.card-three .top-image {
+  height: 55%;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1619891418559-17ac45dc2b70?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  border-radius: 20px;
+  background-size: cover;
+}
+.card-three .top-image .text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+}
+.card-three .top-image .text p {
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+}
+.last-line {
+  padding: 10px;
+  font-size: 20px;
+}
